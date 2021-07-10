@@ -16,13 +16,13 @@ function App() {
           {/* header */}
 
           <Header />
-          {/* <Signup /> */}
-          {/* <Login /> */}
-          {/* <AddNewBook /> */}
-          {/* <Home /> */}
-          {/* <ProductDetailsPage /> */}
-          {/* <Checkout /> */}
-          {/* <AccountDetails /> */}
+          <Signup />
+          <Login />
+          <AddNewBook />
+          <Home />
+          <ProductDetailsPage />
+          <Checkout />
+          <AccountDetails />
     </div>
   );
 }
