@@ -17,37 +17,46 @@ function AddNewBook() {
 
                 <div className="form__item">
                     <label htmlFor="name">Book Title</label>
-                    <input type="text" id="name" />
+                    <input type="text" id="title" />
                 </div>
                 <div className="form__item">
-                    <label htmlFor="name">Actual price</label>
-                    <input type="text" id="name" />
+                    <label htmlFor="name">Book Author</label>
+                    <input type="text" id="author" />
                 </div>
                 <div className="form__item">
-                    <label htmlFor="name">Offer pirce</label>
-                    <input type="text" id="name" />
+                    <label htmlFor="name">Book Publications</label>
+                    <input type="text" id="publications" />
                 </div>
-
-                
-
+                <div className="form__item">
+                    <label htmlFor="MRP">MRP</label>
+                    <input type="text" id="mrpPrice" />
+                </div>
+                <div className="form__item">
+                    <label htmlFor="offPrice">Offer pirce</label>
+                    <input type="text" id="offPrice" />
+                </div>
+                <div className="form__item">
+                    <label htmlFor="weight">Weight</label>
+                    <input type="text" id="weight" />
+                </div>
                 <div className="form__item">
                     <label htmlFor="name">Category</label>
                     <select name="" id="">
                         <option value=""></option>
-                        <option value="">Value2</option>
-                        <option value="">Value3</option>
-                        <option value="">Value4</option>
-                        <option value="">Value5</option>
+                        <option value="">Engineering</option>
+                        <option value="">Polytechnic</option>
+                        <option value="">Medical</option>
+                        <option value="">PSC</option>
                     </select>
                 </div>
                 <div className="form__item">
-                    <label htmlFor="name">Sub-category</label>
+                    <label htmlFor="name">Semester</label>
                     <select name="" id="">
                         <option value=""></option>
-                        <option value="">Value2</option>
-                        <option value="">Value3</option>
-                        <option value="">Value4</option>
-                        <option value="">Value5</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
                     </select>
                 </div>
 
@@ -55,10 +64,8 @@ function AddNewBook() {
                     <label for="formFile">Product Images</label>
                     <input class="form-control" type="file" id="formFile" />
                 </div>
-                
-
                 <div className="form__item">
-                    <button type="submit">Create Account</button>
+                    <button type="submit">Save</button>
                 </div>
 
             </form>
