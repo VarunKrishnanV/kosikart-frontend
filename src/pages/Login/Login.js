@@ -1,10 +1,16 @@
 import React from 'react'
 import logo from '../../assets/images/logo.png'
 import './Login.css'
+import Header from "../../components/Header/Header";
+
 
 function Signup() {
-    return (
+
+    return (<div>
+
+    <Header/>
         <div className="form__container">
+
             <div className="form__logo">
                 <img src={logo} alt="" />
             </div>
@@ -24,7 +30,7 @@ function Signup() {
                     <input type="text" id="password" />
                     <a className="forgotPassword">Forgot password?</a>
                 </div>
-                
+
                 <div className="form__item">
                     <button type="submit">Login</button>
                 </div>
@@ -39,6 +45,7 @@ function Signup() {
                     <a href=""><button type="submit">Return to shopping</button></a>
             </div>
 
+        </div>
         </div>
     )
 }

@@ -6,6 +6,7 @@ import SearchIcon from "@material-ui/icons/Search";
 import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
 
 function PrimaryHeader() {
+<<<<<<< HEAD
   return (
     <Container>
       <Logo src={logo} />
@@ -38,6 +39,33 @@ function PrimaryHeader() {
       </Buttons>
     </Container>
   );
+=======
+    return (
+        <Container>
+            <a href="/">
+            <Logo  src={logo } />
+            </a>
+
+            <Search>
+                <form action="">
+                    <input type="search" name="" id="" placeholder="Try Engineering books , GATE Books" />
+                    <button type="submit"><SearchIcon style={{fontSize : "1em"}}/></button>
+                </form>
+            </Search>
+
+            <Buttons>
+                <li className="login btn"><a href="/login">Login</a></li>
+                <li className="register btn"><a href="/signup">Register</a></li>
+                <li className="cart">
+                    <ShoppingCartOutlinedIcon style={{fontSize : "3em"}}/>
+                    <span className="itemCount">1</span>
+                </li>
+            </Buttons>
+
+
+        </Container>
+    )
+>>>>>>> 817757ee69eb565b1ab9e0d2d5fa0b3b60414f9b
 }
 
 export default PrimaryHeader;

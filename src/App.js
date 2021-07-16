@@ -1,29 +1,31 @@
-import './App.css';
-import Carousel from './components/bannerCarousel/Carousel';
 import Header from './components/Header/Header';
 import Home from './pages/home/Home'
-import Signup from './pages/Signup/Signup'
-import Login from './pages/Login/Login'
-import AddNewBook from './pages/AddNewBook/AddNewBook'
-import ProductDetailsPage from './pages/ProductDetails/ProductDetailsPage';
-import Checkout from './pages/Checkout/Checkout';
-import AccountDetails from './pages/AccountDetails/AccountDetails';
-
+import {
+    BrowserRouter,
+    Route,
+    Switch
+} from 'react-router-dom';
+import Login from "./pages/Login/Login";
+import Signup from "./pages/Signup/Signup";
+import AddNewBook from "./pages/AddNewBook/AddNewBook";
 function App() {
   return (
-    <div className="App">  
 
-          {/* header */}
+    <div className="app-body">
+        <BrowserRouter>
+        <Switch>
 
-          <Header />
-          <Signup />
-          <Login />
-          <AddNewBook />
-          <Home />
-          <ProductDetailsPage />
-          <Checkout />
-          <AccountDetails />
-    </div>
+            <Home exact path="/" />
+            <Route path="/login"
+                   render={() => <Login />}/>
+            <Route path="/signup"
+                   render={() => <Signup />}/>
+            <Route path="/addBook"
+                   render={() => <AddNewBook />}/>
+
+        </Switch>
+        </BrowserRouter>
+      </div>
   );
 }
 
