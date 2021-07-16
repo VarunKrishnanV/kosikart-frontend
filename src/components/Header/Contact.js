@@ -22,8 +22,8 @@ function Contact() {
                                 Request Book
                             </a>
                         </li>
-                        <li><a href="#">Contact us</a></li>
-                        <li><a href="#">Terms &amp; Conditions</a></li>
+                        <li className="mobile__item"><a href="#">Contact us</a></li>
+                        <li className="mobile__item"><a href="#">Terms &amp; Conditions</a></li>
                     </ul>
                 </ContactMenu>
                 
@@ -37,6 +37,7 @@ function Contact() {
 export default Contact
 
 const Container = styled.div`
+
     background-color : #CAF0F8;
     display : flex;
     align-items: center;
@@ -45,13 +46,25 @@ const Container = styled.div`
     font-size : 1.6em;
     font-weight : 500;
     padding : .3em 2em;
+
+
     .contact__menu ul{
         margin-bottom : 0;
     }
+
     .contact__mobile{
         display: flex;
         align-items: center;
         justify-content: center;
+        width: max-content;
+    }
+
+    a{
+        width: max-content;
+    }
+
+    @media all and (max-width : 768px){
+       font-size : 14px;
     }
 `
 
@@ -69,16 +82,26 @@ const ContactMenu = styled.div`
                 width : 1.5em; 
                 margin-right : .5em;
             }
+        }
     }
 
     li{
         list-style-type : none;
         padding: 0em 1em;
+
     }
 
     a{
         text-decoration : none;
         color : inherit;
+        width: max-content;
+    }
+
+    .mobile__item{
+        display: none;
+        @media screen and (min-width : 768px){
+            display: block;
+        }
     }
 
 `
