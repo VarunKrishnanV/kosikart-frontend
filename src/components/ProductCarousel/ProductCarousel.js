@@ -54,8 +54,8 @@ var settings = {
         {
             breakpoint: 700,
             settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1
+                slidesToShow: 2,
+                slidesToScroll: 2
             }
         }
     ]
@@ -65,7 +65,10 @@ function ProductCarousel(props) {
     return (
         <div className="productcarousel__container">
             <div className="carousel__productContainer" >
+            <div className="viewAllContainer">
             <h4 className="productcarousel__heading">{props.heading}</h4>
+                <button className="viewAll">View All</button>
+            </div>
                 <Slider className="slider"
                     {...settings}
                     autoplaySpeed={3000}
@@ -79,6 +82,7 @@ function ProductCarousel(props) {
                         })
                     }
                 </Slider>
+            
             </div>
         </div>
     )
@@ -90,7 +94,7 @@ const Card = ({ item }) => {
             <img className="product__image" src={item.productImageUrl} alt="" />
             <h6 className="product__title">{item.productTitle}</h6>
             <p className="productRatingReview">
-                <span className="star">5<StarRateIcon/></span>
+                <span className="star">5<StarRateIcon className="starIcon"/></span>
                 <span className="review">500 Reviews</span>
             </p>
             <p className="price">

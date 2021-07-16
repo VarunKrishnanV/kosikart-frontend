@@ -4,6 +4,8 @@ import book from '../../assets/images/products/product1.png'
 import ShareIcon from '@material-ui/icons/Share';
 import AddRoundedIcon from '@material-ui/icons/AddRounded';
 import RemoveRoundedIcon from '@material-ui/icons/RemoveRounded';
+import FavoriteIcon from '@material-ui/icons/Favorite';
+
 
 function Orders() {
     return (
@@ -44,6 +46,9 @@ function Orders() {
                             <div className="deleteShare">
                                 <button className="shareIcon">
                                     <ShareIcon className="icon" />
+                                </button>
+                                <button className="shareIcon addToWhishlist">
+                                    <FavoriteIcon className="icon" />
                                 </button>
                             </div>
                         </div>
@@ -107,6 +112,10 @@ function Orders() {
                                 <button className="shareIcon">
                                     <ShareIcon className="icon" />
                                 </button>
+                                <button className="shareIcon addToWhishlist">
+                                    <FavoriteIcon className="icon" />
+                                </button>
+
                             </div>
                         </div>
                     </ItemDetails>
@@ -169,6 +178,10 @@ function Orders() {
                                 <button className="shareIcon">
                                     <ShareIcon className="icon" />
                                 </button>
+                                <button className="shareIcon addToWhishlist">
+                                    <FavoriteIcon className="icon" />
+                                </button>
+                               
                             </div>
                         </div>
                     </ItemDetails>
@@ -254,6 +267,7 @@ const Container = styled.div`
     align-items : flex-start;
     justify-content : space-between;
 
+
     h1{
         font-size : 1.6em;
         font-weight : 700;
@@ -295,6 +309,10 @@ const ItemDetails = styled.div`
             font-size : 16px;
         }
     }
+
+    .addToWishlist{
+        margin-left: 20px;
+    }
     .itemPrice{
         font-size : 1em;
         font-weight : 700;
@@ -304,6 +322,9 @@ const ItemDetails = styled.div`
         display : flex;
         align-items : center;
         justify-content : flex-start;
+        .addToWhishlist{
+            margin-left: 20px;
+        }
     }
     .itemDelete{
         color : #9E0000;
