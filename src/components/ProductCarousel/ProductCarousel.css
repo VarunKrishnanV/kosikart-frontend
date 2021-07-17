@@ -24,7 +24,7 @@
     z-index: 2;
 } */
 .slick-arrow.slick-prev, .slick-arrow.slick-next{
-    background-color: #ccf7ff;
+    background-color: #8e8e8e;
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -32,7 +32,7 @@
     align-items: center;
     justify-content: center;
     z-index: 2;
-    color: #ffffff;
+    color: #002ab3;
 }
 
 .productcarousel__container .slick-prev{
@@ -201,6 +201,11 @@
 .price{
     margin-bottom: 2px;
 }
+
+.slick-arrow.slick-prev, .slick-arrow.slick-next{
+    display: none;
+}
+
 
 }
 
