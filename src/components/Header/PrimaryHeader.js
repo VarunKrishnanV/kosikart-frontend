@@ -8,8 +8,9 @@ import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
 function PrimaryHeader() {
   return (
     <Container>
+        <a href="/">
       <Logo src={logo} />
-
+        </a>
       <Search>
         <form action="">
           <input
@@ -26,10 +27,10 @@ function PrimaryHeader() {
 
       <Buttons>
         <li className="login btn">
-          <a href="">Login</a>
+          <a href="/login">Login</a>
         </li>
         <li className="register btn">
-          <a href="">Register</a>
+          <a href="/signup">Register</a>
         </li>
         <li className="cart">
           <ShoppingCartOutlinedIcon style={{ fontSize: "3em" }} />

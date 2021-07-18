@@ -1,9 +1,16 @@
-import React from 'react'
+import React, {useState} from 'react'
 import logo from '../../assets/images/logo.png'
 import './Signup.css'
-
+import Header from "../../components/Header/Header";
+import {signUp} from "../../APIs/SignUp";
 function Signup() {
+    const [name,setName] = useState('');
+    const [email,setEmail] =useState('');
+    const [phoneNumber,setPhoneNumber] = useState(null);
+    const [password,setPassword] =useState(null);
+    const[confirmPassword,setConfirmPassword]=useState(null);
     return (
+        <div><Header/>
         <div className="form__container">
             <div className="form__logo">
                 <img src={logo} alt="" />
@@ -17,23 +24,34 @@ function Signup() {
 
                 <div className="form__item">
                     <label htmlFor="name">Your name</label>
-                    <input type="text" id="name" />
+                    <input type="text" id="name"
+                    onChange={text=>setName(text)}
+                    />
                 </div>
                 <div className="form__item">
-                    <label htmlFor="name">Contact number</label>
-                    <input type="text" id="name" />
+                    <label htmlFor="phoneNumber">Contact number</label>
+                    <input type="text" id="phoneNumber"
+                    onChange={text=>setPhoneNumber(text)}
+                    />
                 </div>
                 <div className="form__item">
-                    <label htmlFor="name">Email</label>
-                    <input type="text" id="name" />
+                    <label htmlFor="email">Email</label>
+                    <input type="text" id="email"
+
+                    onChange={text=>setEmail(text)}
+                    />
                 </div>
                 <div className="form__item">
-                    <label htmlFor="name">Password</label>
-                    <input type="text" id="name" />
+                    <label htmlFor="password">Password</label>
+                    <input type="password" id="password"
+
+                    onChange={password=>setPassword(password)}/>
                 </div>
                 <div className="form__item">
-                    <label htmlFor="name">Confirm password</label>
-                    <input type="text" id="name" />
+                    <label htmlFor="confirmPassword">Confirm password</label>
+                    <input type="password" id="confirmPassword"
+                    onChange={password=>setConfirmPassword(password)}
+                    />
                 </div>
 
                 <div className="form__item">
@@ -49,7 +67,7 @@ function Signup() {
             <div className="form__item form__redirectBtn">
                     <button type="submit">Create Account</button>
             </div>
-
+        </div>
         </div>
     )
 }

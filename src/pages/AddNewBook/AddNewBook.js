@@ -1,10 +1,14 @@
 import React from 'react'
 import logo from '../../assets/images/logo.png'
 import './AddNewBook.css'
+import Header from "../../components/Header/Header";
 
 function AddNewBook() {
     return (
+<div>
+    <Header/>
         <div className="form__container">
+
             <div className="form__logo">
                 <img src={logo} alt="" />
             </div>
@@ -71,6 +75,7 @@ function AddNewBook() {
             </form>
 
         </div>
+</div>
     )
 }
 
