@@ -30,6 +30,13 @@ export const saveUserToFireStore=(phoneNumber,name,user)=>{
         });
 }
 
-export const login=()=>{
-
+export const login=(email,password)=>{
+        FirebaseConfig.auth().signInWithEmailAndPassword(email,password).then((r)=>{
+            const user = r.user
+            let authToken;
+            user.getIdTokenResult().then(r =>{
+                authToken=r.token
+                localStorage.setItem('authToken',authToken)
+            })
+        })
 }

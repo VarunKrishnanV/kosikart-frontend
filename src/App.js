@@ -8,14 +8,31 @@ import {
 import Login from "./pages/Login/Login";
 import Signup from "./pages/Signup/Signup";
 import AddNewBook from "./pages/AddNewBook/AddNewBook";
+import {useEffect, useState} from "react";
+import {FirebaseConfig} from "./config/FirebaseConfig";
+import {FirebaseAdmin} from "./config/FirebaseAdmin";
 function App() {
+    const [currentUser,setCurrentUser]=useState(null)
+    useEffect(()=>{
+        loadCurrentUser()
+    },[currentUser]);
+    const loadCurrentUser=()=>{
+        FirebaseConfig.auth().onAuthStateChanged((user) => {
+            if (user) {
+                // User logged in already or has just logged in.
+                setCurrentUser(user)
+            } else {
+                // User not logged in or has just logged out.
+            }
+        });
+    }
   return (
 
     <div className="app-body">
         <BrowserRouter>
         <Switch>
 
-            <Home exact path="/" />
+            <Home  exact path="/" />
             <Route path="/login"
                    render={() => <Login />}/>
             <Route path="/signup"

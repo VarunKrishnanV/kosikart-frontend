@@ -1,11 +1,25 @@
-import React from 'react'
+import React, {useState} from 'react'
 import logo from '../../assets/images/logo.png'
 import './Login.css'
 import Header from "../../components/Header/Header";
+import {login} from "../../APIs/SignUp";
 
 
 function Signup() {
-
+    const[email,setEmail] =useState(null)
+    const [password,setPassword] = useState(null)
+const handleSubmit=(event)=>{
+        event.preventDefault()
+    login(email,password)
+}
+const handleChange=(e)=>{
+        if(e.target.id==='email'){
+            setEmail(e.target.value)
+        }
+        if(e.target.id==='password'){
+            setPassword(e.target.value)
+        }
+}
     return (<div>
 
     <Header/>
@@ -23,16 +37,20 @@ function Signup() {
 
                 <div className="form__item">
                     <label htmlFor="email">Email / Phone number</label>
-                    <input type="text" id="email" />
+                    <input type="text" id="email"
+
+                    onChange={handleChange}/>
                 </div>
                 <div className="form__item">
                     <label htmlFor="password">Password</label>
-                    <input type="text" id="password" />
+                    <input type="password" id="password"
+                    onChange={handleChange}
+                    />
                     <a className="forgotPassword">Forgot password?</a>
                 </div>
 
                 <div className="form__item">
-                    <button type="submit">Login</button>
+                    <button type="submit" onClick={handleSubmit}>Login</button>
                 </div>
 
             </form>
