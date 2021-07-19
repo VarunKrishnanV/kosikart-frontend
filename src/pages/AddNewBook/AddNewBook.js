@@ -133,8 +133,7 @@ function AddNewBook() {
 
 export const addBook =(title, author, publications, mrpPrice, offPrice, weight, category, semester, image)=>{
 
-    const imageRef = storage.ref(`/BookType/${category}/${semester}/${image.name}`)
-        .on("state_changed" , alert("image uploaded successfully."));
+    const imageRef = FirebaseConfig.storage().ref(`/BookType/${category}/${semester}/${image.name}`).put(image).on("state_changed" , alert("image uploaded successfully."));
 
     const imageUrl = imageRef.getDownloadURL();
 
