@@ -19,6 +19,7 @@ function AddNewBook() {
     const [image, setImage] = useState('');
 
 
+
     const handleSubmit=(event)=>{
         event.preventDefault()
         event.nativeEvent.stopImmediatePropagation()
@@ -131,23 +132,24 @@ function AddNewBook() {
     )
 }
 
-export const addBook =(title, author, publications, mrpPrice, offPrice, weight, category, semester, image)=>{
+export const addBook =async (title, author, publications, mrpPrice, offPrice, weight, category, semester, image) => {
 
-    const imageRef = FirebaseConfig.storage().ref(`/BookType/${category}/${semester}/${image.name}`).put(image).on("state_changed" , alert("image uploaded successfully."));
 
-    const imageUrl = imageRef.getDownloadURL();
+    const imageRef = await FirebaseConfig.storage().ref(`/BookType/${category}/${semester}/${image.name}`)
+        .put(image).on("state_changed", alert("image uploaded successfully."), alert);
+
+    const url = await FirebaseConfig.storage().ref(`/BookType/${category}/${semester}/${image.name}`).getDownloadURL();
 
     FirebaseConfig.firestore().collection('BookType').doc(category).collection(semester)
         .doc(title).set({
-        title : title,
-        author : author,
-        publications : publications,
-        mrpPrice : mrpPrice,
-        offPrice : offPrice,
-        weight : weight,
-        category : category,
-        semester : semester,
-        imageUrl : imageUrl
+        title: title,
+        author: author,
+        publications: publications,
+        mrpPrice: mrpPrice,
+        offPrice: offPrice,
+        weight: weight,
+        category: category,
+        semester: semester,
     })
         .then(() => {
             console.log("Book Added Successfully.");
