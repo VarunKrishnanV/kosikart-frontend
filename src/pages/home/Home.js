@@ -11,9 +11,9 @@ function Home() {
             <Header/>
             <Carousel />
             <ProductCarousel heading={"Stationeries"}/>
-            <ProductCarousel heading={"Get our latest products"}/>
-            <ProductCarousel heading={"Competative"}/>
-            <ProductCarousel heading={"University Question Banks"}/>
+            {/*<ProductCarousel heading={"Get our latest products"}/>*/}
+            {/*<ProductCarousel heading={"Competative"}/>*/}
+            {/*<ProductCarousel heading={"University Question Banks"}/>*/}
         </div>
     )
 }
