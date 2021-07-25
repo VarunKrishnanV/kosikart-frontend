@@ -99,19 +99,19 @@ function ProductCarousel(props) {
                         <button className="viewAll">View All</button>
                     </div>
 
-                    {/*<Slider className="slider"*/}
-                    {/*        {...settings}*/}
-                    {/*        autoplaySpeed={3000}*/}
-                    {/*        dots*/}
-                    {/*        prevArrow={<PreviousBtn/>}*/}
-                    {/*        nextArrow={<NextBtn/>}*/}
-                    {/*>*/}
+                    <Slider className="slider"
+                            {...settings}
+                            autoplaySpeed={3000}
+                            dots
+                            prevArrow={<PreviousBtn/>}
+                            nextArrow={<NextBtn/>}
+                    >
                         {
                             info.map((item) => {
                                 return <Card item={item}/>
                             })
                         }
-                    {/*</Slider>*/}
+                    </Slider>
 
                 </div>
             </div>

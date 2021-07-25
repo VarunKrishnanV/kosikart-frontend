@@ -8,6 +8,8 @@ import {
 import Login from "./pages/Login/Login";
 import Signup from "./pages/Signup/Signup";
 import AddNewBook from "./pages/AddNewBook/AddNewBook";
+import Checkout from "./pages/Checkout/Checkout";
+import MySQLserver from "./config/modules/server";
 import {useEffect, useState} from "react";
 import {FirebaseConfig} from "./config/FirebaseConfig";
 import {FirebaseAdmin} from "./config/FirebaseAdmin";
@@ -31,6 +33,8 @@ function App() {
     <div className="app-body">
         <BrowserRouter>
         <Switch>
+            <Route path="/"
+                   render={() => <MySQLserver />}/>
 
             <Home  exact path="/" />
             <Route path="/login"
@@ -39,6 +43,9 @@ function App() {
                    render={() => <Signup />}/>
             <Route path="/addBook"
                    render={() => <AddNewBook />}/>
+
+            <Route path="/checkout"
+                   render={() => <Checkout />}/>
 
         </Switch>
         </BrowserRouter>
